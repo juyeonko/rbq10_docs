@@ -5,10 +5,14 @@
     "vitepress": "^1.6.3"
   },
   "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "deploy": "vitepress build && gh-pages -d .vitepress/dist"
+    "deploy": "npm run build && gh-pages -d .vitepress/dist"
   },
   "type": "module"
 }
+
