@@ -8,8 +8,12 @@ npm run docs:build || { echo "Build failed!"; exit 1; }
 echo "Switching to gh-pages branch..."
 git checkout gh-pages || { echo "Failed to switch to gh-pages!"; exit 1; }
 
-echo "Cleaning old files..."
-git rm -rf . || { echo "Failed to remove old files!"; exit 1; }
+if [ -n "$(ls -A)" ]; then
+    echo "Cleaning old files..."
+    git rm -rf . || { echo "Failed to remove old files!"; exit 1; }
+else
+    echo "No files to remove. Skipping cleanup."
+fi
 
 echo "Copying new build files..."
 cp -r .vitepress/dist/* . || { echo "Failed to copy build files!"; exit 1; }
