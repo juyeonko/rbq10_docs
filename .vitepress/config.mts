@@ -7,7 +7,7 @@ export default defineConfig({
   description: "Document",
   head: [
     ['meta', { name: 'theme-color', content: '#729b1a' }],
-    ['link', { rel: 'icon', href: '/rbq10_docs/logo.png', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/rbq10_docs/public/logo.png', type: 'image/svg+xml' }],
   ],
   vite: {
     plugins: [UnoCSS()],
@@ -16,7 +16,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: '/rbq10_docs/logo.png',
+    logo: '/rbq10_docs/public/logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
